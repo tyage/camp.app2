@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  notification:
+  app:
     build: 
       context: .
       dockerfile: .devcontainer/Dockerfile
