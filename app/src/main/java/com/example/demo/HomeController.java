@@ -35,7 +35,7 @@ public class HomeController {
   @GetMapping("/admin")
   public String admin(Model model) {
     String user = (String) session.getAttribute("user");
-    if (!user.equals("admin")) {
+    if (user == null || !user.equals("admin")) {
       return "redirect:/";
     }
     model.addAttribute("user", user);
