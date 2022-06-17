@@ -1,1 +1,3 @@
-demo.jwt_secret=${JWT_SECRET}
+spring:
+  thymeleaf:
+    cache: false

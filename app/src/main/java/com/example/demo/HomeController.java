@@ -1,20 +1,44 @@
 package com.example.demo;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import javax.servlet.http.HttpSession;
 
-@CrossOrigin
-@RestController
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
 public class HomeController {
-  @GetMapping("/{username}")
-  public String user(@PathVariable String username) {
-    return username + "さんこんにちは！ お知らせは特にありません。";
+  @Autowired
+  HttpSession session;
+
+  @GetMapping("/")
+  public String home() {
+    return "home";
+  }
+
+  @PostMapping("/login")
+  public String login(
+      @RequestParam("username") String username,
+      @RequestParam("password") String password) {
+    if (username.equals("admin") &&
+        password.equals("supersecretpasswordyuruseccamp2022")) {
+      session.setAttribute("user", "admin");
+      return "redirect:/admin";
+    } else {
+      return "redirect:/";
+    }
   }
 
   @GetMapping("/admin")
-  public String admin() {
-    return "管理者向けのお知らせ: Flag{BlahBlahBlah}";
+  public String admin(Model model) {
+    String user = (String) session.getAttribute("user");
+    if (!user.equals("admin")) {
+      return "redirect:/";
+    }
+    model.addAttribute("user", user);
+    return "admin";
   }
 }
