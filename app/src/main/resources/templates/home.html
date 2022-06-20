@@ -4,13 +4,20 @@
 <head>
   <meta charset="UTF-8" />
   <title></title>
+  <link rel="stylesheet" href="/assets/app.css">
 </head>
 
 <body>
-  <form action="/login" method="POST">
-    <input type="text" name="username">
-    <input type="password" name="password">
-    <input type="submit" value="管理ページへログイン">
+  <form action="/login" method="POST" class="form">
+    <div class="form-component">
+      <input type="text" name="username" placeholder="ユーザ名">
+    </div>
+    <div class="form-component">
+      <input type="password" name="password" placeholder="パスワード">
+    </div>
+    <div class="form-component">
+      <input type="submit" value="管理ページへログイン">
+    </div>
   </form>
 </body>
 

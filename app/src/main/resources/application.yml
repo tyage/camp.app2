@@ -1,3 +1,9 @@
 spring:
   thymeleaf:
     cache: false
+
+app:
+  admin:
+    username: admin
+    password: supersecretpasswordyuruseccamp2022
+  secret_message: FLAG{yyyyxxaa}
