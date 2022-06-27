@@ -7,6 +7,6 @@ services:
   nginx:
     image: nginx
     volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/default.conf:/etc/nginx/conf.d/
     ports:
       - 30080:80
