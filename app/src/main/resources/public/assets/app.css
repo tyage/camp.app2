@@ -1,6 +1,12 @@
+.logo {
+  width: 300px;
+  margin: 70px auto 0 auto;
+  display: block;
+}
+
 .form {
   width: 400px;
-  margin: 100px auto 0 auto;
+  margin: 30px auto 0 auto;
 }
 
 .form-component input {
