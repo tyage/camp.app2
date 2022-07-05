@@ -1,4 +1,4 @@
-package com.example.demo;
+package seccamp.app2;
 
 import javax.servlet.http.HttpSession;
 
@@ -20,9 +20,6 @@ public class HomeController {
 
   @Value("${app.admin.password}")
   private String adminPassword;
-
-  @Value("${app.secret_message}")
-  private String secretMessage;
 
   @GetMapping("/")
   public String home() {
@@ -52,8 +49,6 @@ public class HomeController {
       return "redirect:/";
     }
 
-    model.addAttribute("user", user);
-    model.addAttribute("message", secretMessage);
     return "admin";
   }
 }

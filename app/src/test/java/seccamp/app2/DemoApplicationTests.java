@@ -1,10 +1,10 @@
-package com.example.demo;
+package seccamp.app2;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class App2ApplicationTests {
 
 	@Test
 	void contextLoads() {

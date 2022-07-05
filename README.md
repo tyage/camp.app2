@@ -1,1 +1,1 @@
-# microservices-sample2
+# Camp App #2

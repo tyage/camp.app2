@@ -6,10 +6,10 @@
   "configurations": [
     {
       "type": "java",
-      "name": "Launch DemoApplication",
+      "name": "Launch Application",
       "request": "launch",
-      "mainClass": "com.example.demo.DemoApplication",
-      "projectName": "demo"
+      "mainClass": "seccamp.app2.App2Application",
+      "projectName": "app2"
     }
   ]
 }
